@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard IPNU IPPNU Ranting Bogoran</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="header-container">
+      <img src="ipnu.png" alt="IPNU" class="logo-left" />
+      <div class="header-text">
+        <h1 class="header-title">IPNU IPPNU Ranting Bogoran</h1>
+        <p class="slogan">"Berkhidmat dengan Ikhlas, Menebar Manfaat untuk Umat"</p>
+      </div>
+      <img src="ippnu.png" alt="IPPNU" class="logo-right" />
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#jadwal-sholat">Jadwal Sholat</a>
+    <a href="#kalender">Kalender</a>
+    <a href="#struktur">Struktur</a>
+    <a href="#mars">Mars</a>
+    <a href="#mc">MC</a>
+    <a href="#sambutan">Sambutan</a>
+    <a href="#tahlil">Tahlil</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Jadwal Sholat Section -->
+    <section id="jadwal-sholat">
+      <h2 class="section-title">Jadwal Sholat Hari Ini (WADAS)</h2>
+      <div id="sholat-times" class="sholat-grid">Memuat jadwal...</div>
+    </section>
+
+    <!-- Doa Harian Section -->
+    <section id="doa-box">
+      <h2 class="section-title">Doa Harian</h2>
+      <p id="doa-arab" class="arabic-text"></p>
+      <p id="doa-indo" class="translation-text"></p>
+    </section>
+
+    <!-- Ayat Harian Section -->
+    <section id="ayat-box">
+      <h2 class="section-title">Ayat Hari Ini</h2>
+      <p id="ayat-arab" class="arabic-text"></p>
+      <p id="ayat-latin" class="latin-text"></p>
+      <p id="ayat-arti" class="translation-text"></p>
+      <p id="ayat-sumber" class="source-text"></p>
+    </section>
+
+    <!-- Kalender Section -->
+    <section id="kalender">
+      <h2 class="section-title">Kalender Kegiatan</h2>
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <button id="prev-month" class="calendar-nav">&lt;</button>
+          <span id="current-month">Memuat kalender...</span>
+          <button id="next-month" class="calendar-nav">&gt;</button>
+        </div>
+        <div class="calendar-grid" id="calendar-grid">
+          <div class="loading">Memuat kalender Hijriyah...</div>
+        </div>
+        <div class="event-countdown">
+          <h3>Acara Selanjutnya</h3>
+          <div class="countdown-timer" id="countdown-timer"></div>
+          <div class="next-event">
+            <span id="next-event-date"></span> - 
+            <span class="event-name" id="next-event-name"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Struktur Organisasi Section -->
+    <section id="struktur">
+      <h2 class="section-title">Struktur Organisasi</h2>
+      <div class="doc-card">
+        <img src="assets/img/struktur.png" alt="Struktur Organisasi" />
+        <div class="doc-info">
+          <p>Struktur Kepengurusan IPNU IPPNU Ranting Bogoran Tahun 2025.</p>
+          <a class="download-button" href="docs/struktur.pdf" target="_blank">Unduh PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mars Section -->
+    <section id="mars">
+      <h2 class="section-title">Mars Yalal WathonS</h2>
+      <div class="doc-card">
+        <img src="assets/img/yalalwaton.jpg" alt="Mars Yalal Wathon" />
+        <div class="doc-info">
+          <p>Mars Yalal Wathon</p>
+          <a class="download-button" href="assets/img/yalalwaton.jpg" download>Unduh Gambar</a>
+        </div>
+      </div>
+
+      <div class="doc-card">
+    <img src="assets/img/ipnu.jpg" alt="Mars IPNU" style="width: 75vw;">
+    <div class="doc-info">
+      <p>Mars IPNU </p>
+      <a class="download-button" href="assets/img/ipnu.jpg" download>Unduh</a>
+    </div>
+  </div>
+
+  <div class="doc-card">
+    <img src="assets/img/ippnum.png" alt="Mars IPPNU" style="width: 75vw;">
+    <div class="doc-info">
+      <p>Mars IPPNU</p>
+      <a class="download-button" href="assets/img/ippnum.png" download>Unduh</a>
+    </div>
+  </div>
+</section>
+      <!-- Mars lainnya... -->
+    </section>
+
+    <!-- MC Section -->
+    <section id="mc">
+      <h2 class="section-title">Susunan Acara (MC)</h2>
+      <div class="doc-card">
+        <img src="assets/img/mc.png" alt="Susunan Acara" />
+        <div class="doc-info">
+          <p>Susunan acara kegiatan IPNU IPPNU Ranting Bogoran.</p>
+          <a href="#" class="download-button" onclick="downloadImage('assets/img/mc.png')">Unduh Gambar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sambutan Section -->
+    <section id="sambutan">
+      <h2 class="section-title">Teks Sambutan</h2>
+      <div class="doc-card">
+        <img src="assets/img/sambutan.png" alt="Sambutan" />
+        <div class="doc-info">
+          <p>Teks sambutan untuk kegiatan IPNU IPPNU Ranting Bogoran.</p>
+          <a href="#" class="download-button" onclick="downloadImage('assets/img/sambutan.png')">Unduh Gambar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tahlil Section -->
+    <section id="tahlil">
+      <h2 class="section-title">Tahlil Lengkap</h2>
+      <div class="doc-card">
+        <img src="assets/img/tahlil.png" alt="Tahlil" />
+        <div class="doc-info">
+          <p>Dokumen bacaan tahlil lengkap untuk kegiatan IPNU IPPNU.</p>
+          <a href="#" class="download-button" onclick="downloadImage('assets/img/tahlil.png')">Unduh Gambar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- HTML: Taruh di mana saja (samping jadwal sholat) -->
+<div class="pengumuman-box">
+  <h3><i class="fas fa-bullhorn"></i> Pengumuman</h3>
+  <div id="pengumuman-content">Memuat...</div>
+  <a href="https://docs.google.com/spreadsheets/d/1VF4II13d4eC9u8uEUzFOrXl_2gqzznjlhg1PgQOvgz0/edit?gid=0#gid=0" target="_blank" class="edit-link">
+    <i class="fas fa-edit"></i> Update Pengumuman
+  </a>
+</div>
+
+<script>
+// Ganti dengan ID Sheet dan API Key Anda
+const SHEET_ID = '1VF4II13d4ec9u8uEUzF0rxL_2gqzznj1hglPgQ0vgz6';
+const API_KEY = 'AIzaSyCfzxUULUF5Te6_YwGLG9tejXjDYPKOVNE';
+
+function loadPengumuman() {
+    fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Pengumuman1A1?key=${API_KEY}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.values && data.values.length > 0) {
+            document.getElementById('pengumuman-content').innerText = data.values[0][0];
+        } else {
+            document.getElementById('pengumuman-content').innerText = "Tidak ada data pengumuman";
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        document.getElementById('pengumuman-content').innerText = "Pengumuman tidak dapat dimuat";
+    });
+}
+
+// Refresh setiap 5 menit
+loadPengumuman();
+setInterval(loadPengumuman, 300000);
+</script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <a href="https://instagram.com/pr.ipnuippnu.bogoran" target="_blank" class="footer-instagram">
+        <i class="fab fa-instagram"></i> @pr.ipnuippnu.bogoran
+      </a>
+      <p class="footer-address">
+        Sekretariat Masjid Baiturrohmah Wadas Bogoran, Sapuran, Wonosobo
+      </p>
+    </div>
+    <div class="footer-copy">
+      &copy; 2025 Tim Kominfo IPNU IPPNU Bogoran
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
