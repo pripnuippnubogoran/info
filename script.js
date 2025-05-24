@@ -54,16 +54,13 @@ function initJadwalSholat() {
 
 function initDoaAyat() {
   // Ambil doa harian
-  fetch('https://api.myquran.com/v2/doa/acak')
-  .then(res => res.json())
-  .then(data => {
-    const doa = data.data;
-    document.getElementById('daily-doa').innerHTML = `
-      <strong>${doa.judul}</strong><br>
-      ${doa.arab}<br>
-      <em>${doa.indo}</em>
-    `;
-  })
+  fetch("https://api.myquran.com/v2/doa/acak")
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status && data.data) {
+                        document.getElementById("doa-title").textContent = data.data.title;
+                        document.getElementById("doa-arab").textContent = data.data.arab;
+                        document.getElementById("doa-indo").textContent = data.data.indo;
 
   // Ambil ayat harian
   fetch("https://api.myquran.com/v2/quran/ayat/acak")
