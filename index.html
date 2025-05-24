@@ -40,15 +40,7 @@
     </section>
 
     <!-- Doa Harian Section -->
-    <section id="doa-box">
-      <h2 class="section-title">Doa Harian</h2>
-      <p id="doa-title" class="title"></p>
-      <p id="doa-arab" class="arabic-text"></p>
-      <p id="doa-indo" class="translation-text"></p>
-    </section>
-
-    <!-- Ayat Harian Section -->
-   <!-- Di HTML -->
+    <!-- Di HTML -->
 <section id="doa-box">
   <h2 class="section-title">Doa Harian</h2>
   <div id="daily-doa">Memuat doa...</div>
@@ -76,6 +68,17 @@ fetch('https://api.myquran.com/v2/doa/acak')
     console.error("Error:", error);
   });
 </script>
+    
+</section>
+
+    <!-- Ayat Harian Section -->
+    <section id="ayat-box">
+      <h2 class="section-title">Ayat Hari Ini</h2>
+      <p id="ayat-arab" class="arabic-text"></p>
+      <p id="ayat-latin" class="latin-text"></p>
+      <p id="ayat-arti" class="translation-text"></p>
+      <p id="ayat-sumber" class="source-text"></p>
+    </section>
 
     <!-- Kalender Section -->
     <section id="kalender">
@@ -114,7 +117,7 @@ fetch('https://api.myquran.com/v2/doa/acak')
 
     <!-- Mars Section -->
     <section id="mars">
-      <h2 class="section-title">Mars </h2>
+      <h2 class="section-title">Mars Yalal WathonS</h2>
       <div class="doc-card">
         <img src="assets/img/yalalwaton.jpg" alt="Mars Yalal Wathon" />
         <div class="doc-info">
