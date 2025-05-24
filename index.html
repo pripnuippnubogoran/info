@@ -48,13 +48,34 @@
     </section>
 
     <!-- Ayat Harian Section -->
-    <section id="ayat-box">
-      <h2 class="section-title">Ayat Hari Ini</h2>
-      <p id="ayat-arab" class="arabic-text"></p>
-      <p id="ayat-latin" class="latin-text"></p>
-      <p id="ayat-arti" class="translation-text"></p>
-      <p id="ayat-sumber" class="source-text"></p>
-    </section>
+   <!-- Di HTML -->
+<section id="doa-box">
+  <h2 class="section-title">Doa Harian</h2>
+  <div id="daily-doa">Memuat doa...</div>
+</section>
+
+<script>
+// Kode JavaScript langsung
+fetch('https://api.myquran.com/v2/doa/acak')
+  .then(res => {
+    if (!res.ok) throw new Error("Gagal memuat");
+    return res.json();
+  })
+  .then(data => {
+    const doa = data.data;
+    document.getElementById('daily-doa').innerHTML = `
+      <p class="doa-title"><strong>${doa.judul}</strong></p>
+      <p class="arabic-text">${doa.arab}</p>
+      <p class="translation-text"><em>${doa.indo}</em></p>
+    `;
+  })
+  .catch(error => {
+    document.getElementById('daily-doa').innerHTML = `
+      <p class="error-message">Doa tidak dapat dimuat. Silakan refresh halaman.</p>
+    `;
+    console.error("Error:", error);
+  });
+</script>
 
     <!-- Kalender Section -->
     <section id="kalender">
