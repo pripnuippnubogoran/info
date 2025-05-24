@@ -54,14 +54,26 @@ function initJadwalSholat() {
 
 function initDoaAyat() {
   // Ambil doa harian
-  fetch("https://api.myquran.com/v2/doa/acak")
-                .then(res => res.json())
-                .then(data => {
-                    if (data.status && data.data) {
-                        document.getElementById("doa-title").textContent = data.data.title;
-                        document.getElementById("doa-arab").textContent = data.data.arab;
-                        document.getElementById("doa-indo").textContent = data.data.indo;
+ // Fungsi untuk menampilkan doa sekali saat load
+function showDailyDoa() {
+    fetch("https://api.myquran.com/v2/doa/acak")
+        .then(response => response.json())
+        .then(data => {
+            const doa = data.data;
+            document.getElementById('doa-judul').textContent = doa.judul;
+            document.getElementById('doa-arab').textContent = doa.arab;
+            document.getElementById('doa-indo').textContent = doa.indo;
+        })
+        .catch(() => {
+            document.getElementById('doa-judul').textContent = "Doa harian tidak tersedia";
+            document.getElementById('doa-arab').textContent = "";
+            document.getElementById('doa-indo').textContent = "";
+        });
+}
 
+// Jalankan saat halaman selesai dimuat
+document.addEventListener('DOMContentLoaded', showDailyDoa);
+}
   // Ambil ayat harian
   fetch("https://api.myquran.com/v2/quran/ayat/acak")
     .then(res => res.json())
@@ -77,7 +89,7 @@ function initDoaAyat() {
           `QS. ${surat.nama.id} (${surat.nama.ar}) : Ayat ${ayat.ayah}`;
       }
     });
-}
+
 
 function initCountdown() {
   updateCountdown();
@@ -138,20 +150,20 @@ function createOfflineCalendar(year, month) {
   
   // Daftar bulan Hijriyah dan jumlah hari (30/29)
   const hijriMonths = [
-    { name: "Muharram", days: 29 },
-    { name: "Shafar", days: 30 },
-    { name: "Rabiul Awal", days: 29 },
-    { name: "Rabiul Akhir", days: 30 },
-    { name: "Jumadil Awal", days: 29 },
-    { name: "Jumadil Akhir", days: 30 },
-    { name: "Rajab", days: 29 },
-    { name: "Sya'ban", days: 30 },
-    { name: "Ramadhan", days: 29 },
-    { name: "Syawal", days: 30 },
-    { name: "Dzulqa'dah", days: 29 },
-    { name: "Dzulhijjah", days: CONFIG.dzulhijjah1445.isSpecial ? 29 : 30 }
+    { name: "محرم", days: 29 },
+    { name: "صَفَر", days: 30 },
+    { name: "راوال", days: 29 },
+    { name: "راالاخر", days: 30 },
+    { name: "ج اوال", days: 29 },
+    { name: "ج الاخر", days: 30 },
+    { name: "رجب", days: 29 },
+    { name: "شعبن", days: 30 },
+    { name: "رمضان", days: 29 },
+    { name: "شَوَّال", days: 30 },
+    { name: "ذُو الْقَعْدَة", days: 29 },
+    { name: "ذُو الْحِجَّة", days: CONFIG.dzulhijjah1445.isSpecial ? 29 : 30 }
   ];
-  
+ 
   // Hitung selisih hari dari tanggal patokan
   const currentDate = new Date(year, month, 1);
   const diffDays = Math.floor((currentDate - referenceDate) / (1000 * 60 * 60 * 24));
