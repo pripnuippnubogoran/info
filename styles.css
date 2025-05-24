@@ -441,4 +441,23 @@ main {
 .edit-link:hover {
   text-decoration: underline;
 }
+  #doa-title {
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#doa-arab {
+    font-family: 'Traditional Arabic', serif;
+    font-size: 28px;
+    text-align: right;
+    direction: rtl;
+    margin-bottom: 15px;
+}
+
+#doa-indo {
+    font-style: italic;
+    color: #555;
+}
 }
